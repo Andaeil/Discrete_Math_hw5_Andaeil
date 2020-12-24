@@ -13,14 +13,14 @@ void bfs(graph_t * g, int start, int end){
 		}else if(start == i){
 			length[i] = 0;
 		}else{
-			length[i] = 1000000000;
+			length[i] = 2000000000;
 		}
 	}
 	visited[start] = 1;
 
 	for(int i = 0; i < g->n_vertices; i++){
 		int curr;
-		int min = 1000000000;
+		int min = 2000000000;
 
 		for(int j = 0; j < g->n_vertices; j++){
 			if(length[j] < min && visited[j] != 1){
@@ -43,33 +43,6 @@ void bfs(graph_t * g, int start, int end){
 
 	printf("%d에서 %d까지의 최단 경로는 %d입니다.\n", start, end, length[end]);
 }
-
-// void bfs(graph_t * g, int start){
-// 	int n_queue = 0;
-// 	int queue[63];
-// 	int head = 0;
-// 	int tail = 0;
-// 	int length[64];
-
-// 	int visited[64] = {0};
-
-// 	memset(visited, 0, sizeof(int) * 64);
-
-// 	queue[tail++] = start; n_queue++; visited[start] = 1;
-
-// 	while(n_queue > 0){
-// 		int curr = queue[head++]; n_queue --;
-// 		printf("%d\n", curr);
-
-// 		for(int neighbor = 0; neighbor < g->n_vertices; neighbor++){		
-// 			if(g->m[curr][neighbor] > 0){
-// 				if(visited[neighbor] == 0){
-// 					queue[tail++] = neighbor; n_queue++; visited[neighbor] = 1;	
-// 				}
-// 			} 
-// 		}
-// 	}
-// }
 
 /*TODO: you can add functions as you want */
 

@@ -9,14 +9,13 @@ void take_a_tour(graph_t * g, int start){
 	do{
 		printf("%d\n", curr);
 		for(next = 0; next < g->n_vertices; next++){
-			if(g->m[curr][next] > 0){
-				g->m[curr][next]--; 
+			if(g->m[curr][next] > 0){ 
 				break;
 			}
 		}
 		
 		if(next < g->n_vertices){
-			graph_remove_edge(g, curr, next, g->w[curr][next][0]);
+			graph_remove_edge(g, curr, next, g->w[curr][next][g->m[curr][next] - 1]);
 			curr = next;
 		}
 	}while(next != g->n_vertices);

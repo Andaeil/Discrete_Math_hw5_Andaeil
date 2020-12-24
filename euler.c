@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "graph.h"
 
-void taka_a_tour(graph_t * g, int start){
+void take_a_tour(graph_t * g, int start){
 	int curr = start;
 	int next;
 

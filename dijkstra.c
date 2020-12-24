@@ -24,14 +24,13 @@ void bfs(graph_t * g, int start, int end){
 
 		for(int j = 0; j < g->n_vertices; j++){
 			if(length[j] < min && visited[j] != 1){
-				curr = i;
+				curr = j;
 				break;
 			}
 		}
 
 		for(int j = 0; j < g->n_vertices; j++){
 			if(g->m[curr][j] > 0){
-				printf("m[%d][%d] = %d, w[%d][%d][%d] = %d\n", curr, j, g->m[curr][j], curr, j, g->m[curr][j]-1, g->w[curr][i][g->m[curr][j]-1]);
 				if(length[curr] + g->w[curr][j][g->m[curr][j]-1] < length[j]){
 					length[j] = length[curr] + g->w[curr][j][g->m[curr][j]-1];
 				}

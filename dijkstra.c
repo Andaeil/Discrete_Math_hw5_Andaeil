@@ -9,7 +9,13 @@ void bfs(graph_t * g, int start, int end){
 
 	for(int i = 0; i < g->n_vertices; i++){
 		if(g->m[start][i] > 0){
-			length[i] = g->w[start][i][g->m[start][i]-1];
+			for(int k = 0; k < g->m[start][i]; k++){
+				if(k == 0){
+					length[i] = g->w[start][i][k];
+				}else if(g->w[start][i][k] < length[i]){
+					length[i] = g->w[start][i][k];
+				}
+			}
 		}else if(start == i){
 			length[i] = 0;
 		}else{

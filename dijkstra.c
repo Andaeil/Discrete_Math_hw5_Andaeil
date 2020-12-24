@@ -31,6 +31,7 @@ void bfs(graph_t * g, int start, int end){
 
 		for(int j = 0; j < g->n_vertices; j++){
 			if(g->m[curr][j] > 0){
+				printf("curr = %d, j = %d, length[curr] = %d, g->w[curr][j][g->m[curr][j]-1] = %d, length[j] = %d\n", curr, j, length[curr], g->w[curr][j][g->m[curr][j]-1], length[j]);
 				if(length[curr] + g->w[curr][j][g->m[curr][j]-1] < length[j]){
 					length[j] = length[curr] + g->w[curr][j][g->m[curr][j]-1];
 				}

@@ -54,9 +54,13 @@ main ()
 				break;
 			}
 		}
+		printf("Ther is Euler Path!!\n");
 		take_a_tour(g, start);
 	}else if(odd_v == 0){
+		printf("Ther is Euler Curcuit!!\n");
 		take_a_tour(g, 0);
+	}else{
+		printf("Ther is no Euler Path or Euler Curcuit!!\n");
 	}
 
 	/* TODO: implement here */
